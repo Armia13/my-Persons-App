@@ -3,7 +3,6 @@ import './Person.css'
 import PersonEdit from './PersonEdit';
 import PersonInfo from './PersonInfo';
 import PropType from 'prop-types';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 const Person = (props) => {
     // let myComponent;
@@ -14,13 +13,14 @@ const Person = (props) => {
     // }
     return (
         <Card style={{ width: '18rem' }}>
-            {props.person.isEditMode ? <PersonEdit person={props.person} /> : <PersonInfo person={props.person} />} 
+            {props.person.isEditMode ? <PersonEdit person={props.person} /> : <PersonInfo person={props.person} editMe={props.allowedit}/>} 
             </Card>
     );
 };
 
 Person.propTypes = {
     person: PropType.object,
+    allowedit: PropType.func
 }
 
 export default Person;

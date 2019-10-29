@@ -12,7 +12,7 @@ const PersonInfo = (props) => {
                 {props.person.description}
             </Card.Text>
             <ButtonGroup aria-label="Basic example">
-                <Button variant="light"><FontAwesomeIcon className="text-info" icon={faEdit} /></Button>
+                <Button onClick={props.editMe}  variant="light"><FontAwesomeIcon className="text-info" icon={faEdit} /></Button>
                 <Button variant="light"><FontAwesomeIcon className="text-danger" icon={faTrash} /></Button>
             </ButtonGroup>
         </Card.Body>
@@ -22,4 +22,5 @@ const PersonInfo = (props) => {
 export default PersonInfo;
 PersonInfo.propTypes = {
     person: PropType.object,
+    editMe: PropType.func
 }
